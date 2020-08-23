@@ -30,7 +30,7 @@ namespace pruebamvc.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:yyyy-MM-dd}",ApplyFormatInEditMode =true)]
         public DateTime Fechanacimiento { set; get; }
-        [Display(Name ="Sueldo:")]
+        [Display(Name ="Salario:")]
         [DataType(DataType.Currency)]
         public Decimal Sueldo { set; get; }
         [Display(Name ="Activo:")]
