@@ -26,7 +26,7 @@ namespace pruebamvc.Models
         public string Apellidopaterno { set; get; }
         [Display(Name ="Apellido materno:")]
         public string Apellidomaterno { set; get; }
-        [Display(Name ="Fecha de Nacimiento:")]
+        [Display(Name ="Fecha en que Nacio:")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:yyyy-MM-dd}",ApplyFormatInEditMode =true)]
         public DateTime Fechanacimiento { set; get; }
