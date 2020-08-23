@@ -20,7 +20,7 @@ namespace pruebamvc.Models
         [Required(ErrorMessage ="Introduzca su nombre")]
         [Display (Name ="Primer nombre:")]
         public string Primernombre { set; get; }
-        [Display(Name ="Nombre:")]
+        [Display(Name ="Segundo Nombre:")]
         public String Segundonombre { set; get; }
         [Display(Name ="Apellido paterno:")]
         public string Apellidopaterno { set; get; }
