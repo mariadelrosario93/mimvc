@@ -1,0 +1,51 @@
+﻿@model pruebamvc.Models.Empleados
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Editar</h2>
+@using (Html.BeginForm("Guardar", "Empleados", FormMethod.Post))
+{
+    <div>
+        @Html.HiddenFor(empleados=>empleados.Id)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados=>empleados.Primernombre)
+        @Html.EditorFor(empleados=>empleados.Primernombre)
+        @Html.ValidationMessageFor(empleados=>empleados.Primernombre)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados=>empleados.Segundonombre)
+        @Html.EditorFor(empleados=>empleados.Segundonombre)
+        @Html.ValidationMessageFor(empleados=>empleados.Segundonombre)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados=>empleados.Apellidopaterno)
+        @Html.EditorFor(empleados=>empleados.Apellidopaterno)
+        @Html.ValidationMessageFor(empleados=>empleados.Apellidopaterno)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados=>empleados.Apellidomaterno)
+        @Html.EditorFor(empleados=>empleados.Apellidomaterno)
+        @Html.ValidationMessageFor(empleados=>empleados.Apellidomaterno)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados=>empleados.Fechanacimiento)
+        @Html.EditorFor(empleados=>empleados.Fechanacimiento, new { htmlAttributes = new { @type = "date" } })
+        @Html.ValidationMessageFor(empleados=>empleados.Fechanacimiento)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados=>empleados.Sueldo)
+        @Html.EditorFor(empleados=>empleados.Sueldo)
+        @Html.ValidationMessageFor(empleados=>empleados.Sueldo)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados=>empleados.Activo)
+        @Html.EditorFor(empleados=>empleados.Activo)
+        @Html.ValidationMessageFor(empleados=>empleados.Activo)
+    </div>
+    <div>
+    <input type="submit" value="Guardar" />
+    </div>
+}

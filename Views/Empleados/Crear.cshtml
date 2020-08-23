@@ -1,0 +1,53 @@
+﻿@model pruebamvc.Models.Empleados
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Crear</h2>
+@using (Html.BeginForm("Guardar","Empleados",FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+    @Html.ValidationSummary(true);
+    <div>
+        @Html.HiddenFor(model=> model.Id,new { @Value=0})
+    </div>
+    <div class="row">
+        @Html.LabelFor(model => model.Primernombre)
+        @Html.EditorFor(Model => Model.Primernombre)
+        @Html.ValidationMessageFor(Model => Model.Primernombre)
+    </div>
+    <div class="row">
+        @Html.LabelFor(model => model.Segundonombre)
+        @Html.EditorFor(Model => Model.Segundonombre)
+        @Html.ValidationMessageFor(Model => Model.Segundonombre)
+    </div>
+    <div class="row">
+        @Html.LabelFor(model => model.Apellidopaterno)
+        @Html.EditorFor(Model => Model.Apellidopaterno)
+        @Html.ValidationMessageFor(Model => Model.Apellidopaterno)
+    </div>
+    <div class="row">
+        @Html.LabelFor(model => model.Apellidomaterno)
+        @Html.EditorFor(Model => Model.Apellidomaterno)
+        @Html.ValidationMessageFor(Model => Model.Apellidomaterno)
+    </div>
+    <div class="row">
+        @Html.LabelFor(model => model.Fechanacimiento)
+        @Html.EditorFor(Model => Model.Fechanacimiento)
+        @Html.ValidationMessageFor(Model => Model.Fechanacimiento)
+    </div>
+    <div class="row">
+        @Html.LabelFor(model => model.Sueldo)
+        @Html.EditorFor(Model => Model.Sueldo)
+        @Html.ValidationMessageFor(Model => Model.Sueldo)
+    </div>
+    <div class="row">
+        @Html.LabelFor(model => model.Activo)
+        @Html.EditorFor(Model => Model.Activo)
+        @Html.ValidationMessageFor(Model => Model.Activo)
+    </div>
+    <div>
+        <input type="submit" value="Guardar" />
+    </div>
+}

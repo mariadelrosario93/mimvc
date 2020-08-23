@@ -1,0 +1,51 @@
+﻿@model pruebamvc.Models.Empleados
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+@using (Html.BeginForm("Confirmareliminacion", "Empleados", FormMethod.Post))
+{
+    <div>
+        @Html.HiddenFor(empleados => empleados.Id)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados => empleados.Primernombre)
+        @Html.DisplayFor(empleados => empleados.Primernombre)
+        @Html.ValidationMessageFor(empleados => empleados.Primernombre)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados => empleados.Segundonombre)
+        @Html.DisplayFor(empleados => empleados.Segundonombre)
+        @Html.ValidationMessageFor(empleados => empleados.Segundonombre)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados => empleados.Apellidopaterno)
+        @Html.DisplayFor(empleados => empleados.Apellidopaterno)
+        @Html.ValidationMessageFor(empleados => empleados.Apellidopaterno)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados => empleados.Apellidomaterno)
+        @Html.DisplayFor(empleados => empleados.Apellidomaterno)
+        @Html.ValidationMessageFor(empleados => empleados.Apellidomaterno)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados => empleados.Fechanacimiento)
+        @Html.DisplayFor(empleados => empleados.Fechanacimiento, new { htmlAttributes = new { @type = "date" } })
+        @Html.ValidationMessageFor(empleados => empleados.Fechanacimiento)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados => empleados.Sueldo)
+        @Html.DisplayFor(empleados => empleados.Sueldo)
+        @Html.ValidationMessageFor(empleados => empleados.Sueldo)
+    </div>
+    <div class="row">
+        @Html.LabelFor(empleados => empleados.Activo)
+        @Html.DisplayFor(empleados => empleados.Activo)
+        @Html.ValidationMessageFor(empleados => empleados.Activo)
+    </div>
+    <div>
+        <input type="submit" value="Confirmar Eliminacion" />
+    </div>
+}

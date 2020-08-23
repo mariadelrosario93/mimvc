@@ -1,0 +1,72 @@
+﻿@model IEnumerable<pruebamvc.Models.Empleados> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Nuevo Empleado","Crear")
+<table>
+    <thead>
+       <tr>
+           <td>
+               Primer nombre
+           </td>
+           <td>
+               Segundo nombre
+           </td>
+           <td>
+               Apellido paterno
+           </td>
+           <td>
+               Apellido materno
+           </td>
+           <td>
+               Fecha de nacimiento
+           </td>
+           <td>
+               Sueldo
+           </td>
+           <td>
+               Activo
+           </td>
+           <td>
+
+           </td>
+       </tr>
+    </thead>
+    <tbody>
+        @foreach(var empleado in Model)
+        {
+        <tr>
+            <td>
+                @empleado.Primernombre
+            </td>
+            <td>
+                @empleado.Segundonombre
+            </td>
+            <td>
+                @empleado.Apellidopaterno
+            </td>
+            <td>
+                @empleado.Apellidomaterno
+            </td>
+            <td>
+                @empleado.Fechanacimiento
+            </td>
+            <td>
+                @empleado.Sueldo
+            </td>
+            <td>
+                @empleado.Activo
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { @Id = empleado.Id }, new { @class = "btn btn-primary" });
+            </td>
+            <td>
+                @Html.ActionLink("Eliminar", "Eliminar", new { @Id = empleado.Id }, new { @class = "btn btn-danger" });
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
